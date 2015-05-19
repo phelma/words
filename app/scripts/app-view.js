@@ -23,14 +23,14 @@ app.AppView = Backbone.View.extend({
     var text = this.textIn.textContent.trim();
     var words = text.split(' ');
 
-    words = words.map(this.makeSpan)
+    words = words.map(this.makeSpan);
 
     this.textOut.innerHTML = '';
 
     words.forEach(function (el) {
       this.textOut.appendChild(el);
       this.textOut.appendChild(this.makeSpace());
-    }.bind(this))
+    }.bind(this));
   },
 
   makeSpan: function (word) {

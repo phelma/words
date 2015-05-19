@@ -27,7 +27,5 @@
     "wiredep": "^2.0.0"
   },
   "dependencies": {
-    "pos": "^0.1.9",
-    "retext-pos": "^0.2.1"
   }
 }
