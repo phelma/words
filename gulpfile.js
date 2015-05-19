@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.css')
@@ -16,6 +17,15 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
 });
+
+gulp.task('css', function(){
+  return gulp.src('app/styles/**/*.css', {base: '.'})
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+      }))
+    .pipe(gulp.dest('.'));
+  })
 
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
